@@ -1,0 +1,2 @@
+v1
+{"path":"file:///app/data/processed/data_lake/orders/part-00000-f6820c08-a24d-469b-9d4e-ace770bd196a-c000.snappy.parquet","size":4722,"isDir":false,"modificationTime":1774761892368,"blockReplication":1,"blockSize":33554432,"action":"add"}
