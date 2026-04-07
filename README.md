@@ -1,6 +1,6 @@
-# 🍽️ Bite Metrics – Real-Time Food Delivery Analytics Pipeline
+# Bite Metrics – Real-Time Food Delivery Analytics Pipeline
 
-## 🚀 Overview
+## Overview
 
 **Bite Metrics** is an end-to-end **real-time data engineering and analytics pipeline** built using modern big data tools. The project simulates a food delivery platform (like Zomato/Swiggy) and processes both **historical and real-time data** to generate actionable insights.
 
@@ -14,7 +14,7 @@ This project demonstrates concepts from:
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 * Transform raw dataset into structured analytical data
 * Simulate real-time food order streaming
@@ -25,7 +25,7 @@ This project demonstrates concepts from:
 
 ---
 
-## 🧩 Architecture
+## Architecture
 
 ```
 Zomato Dataset
@@ -54,7 +54,7 @@ Parquet       PostgreSQL
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Python** – Data generation & preprocessing
 * **Apache Kafka (Docker)** – Real-time streaming
@@ -65,7 +65,7 @@ Parquet       PostgreSQL
 
 ---
 
-## 📊 Data Pipeline Details
+## Data Pipeline Details
 
 ### 1️⃣ Data Cleaning (Static Dataset)
 
@@ -76,13 +76,13 @@ Parquet       PostgreSQL
   * Data normalization
   * Column standardization
 
-📁 Output:
+Output:
 
 ```
 data/processed/restaurants_cleaned.csv
 ```
 
-👉 Acts as **Dimension Table**
+Acts as **Dimension Table**
 
 ---
 
@@ -98,13 +98,13 @@ Since order-level data was unavailable, synthetic data was created:
   * Timestamp (last 30 days)
 * Maintained **foreign key relationship** with `restaurant_id`
 
-📁 Output:
+Output:
 
 ```
 data/processed/orders_cleaned.csv
 ```
 
-👉 Acts as **Fact Table (Historical)**
+Acts as **Fact Table (Historical)**
 
 ---
 
@@ -135,7 +135,7 @@ data/processed/orders_cleaned.csv
   * Fast queries
   * Scalable
 
-#### 🗄️ PostgreSQL
+#### PostgreSQL
 
 * Structured storage
 * Used for BI queries
@@ -158,7 +158,7 @@ data/processed/orders_cleaned.csv
 
 ---
 
-### 🐳 Step 1: Start Kafka (Docker)
+### Step 1: Start Kafka (Docker)
 
 ```bash
 docker compose up -d
@@ -172,7 +172,7 @@ docker ps
 
 ---
 
-### 🧵 Step 2: Create Kafka Topic
+### Step 2: Create Kafka Topic
 
 ```bash
 docker exec -it kafka-kraft kafka-topics.sh --create \
@@ -184,7 +184,7 @@ docker exec -it kafka-kraft kafka-topics.sh --create \
 
 ---
 
-### 🧪 Step 3: Test Kafka (Optional)
+### Step 3: Test Kafka (Optional)
 
 Producer:
 
@@ -205,7 +205,7 @@ docker exec -it kafka-kraft kafka-console-consumer.sh \
 
 ---
 
-### 📤 Step 4: Run Kafka Producer Script
+### Step 4: Run Kafka Producer Script
 
 ```bash
 python producer.py
@@ -213,7 +213,7 @@ python producer.py
 
 ---
 
-### 🔥 Step 5: Start PySpark (Docker)
+### Step 5: Start PySpark (Docker)
 
 ```bash
 docker run -it --rm --network=host \
@@ -223,7 +223,7 @@ docker run -it --rm --network=host \
 
 ---
 
-### ⚙️ Step 6: Setup Environment (Inside Container)
+### Step 6: Setup Environment (Inside Container)
 
 ```bash
 mkdir -p /tmp/.ivy2/cache /tmp/.ivy2/jars
@@ -232,7 +232,7 @@ export HOME=/tmp
 
 ---
 
-### 📊 Step 7: Run Batch Job
+### Step 7: Run Batch Job
 
 ```bash
 /opt/spark/bin/spark-submit \
@@ -243,7 +243,7 @@ export HOME=/tmp
 
 ---
 
-### ⚡ Step 8: Run Streaming Job
+### Step 8: Run Streaming Job
 
 ```bash
 /opt/spark/bin/spark-submit \
@@ -254,7 +254,7 @@ export HOME=/tmp
 
 ---
 
-## 🧠 Key Concepts Demonstrated
+## Key Concepts Demonstrated
 
 * Data Cleaning & EDA
 * Synthetic Data Generation
@@ -267,7 +267,7 @@ export HOME=/tmp
 
 ---
 
-## 💡 Why This Project Matters
+## Why This Project Matters
 
 This project replicates a **real-world data engineering system**:
 
@@ -278,17 +278,8 @@ This project replicates a **real-world data engineering system**:
 
 ---
 
-## 🚀 Future Improvements
 
-* Add **real-time dashboards (Streamlit/React)**
-* Implement **Spark windowing & watermarking**
-* Add **Airflow for orchestration**
-* Deploy on **cloud (AWS/GCP)**
-* Integrate **ML models for recommendations**
-
----
-
-## 👩‍💻 Author
+## Author
 
 Sharvari Gupte
 (Data Science & Data Engineering Enthusiast)
