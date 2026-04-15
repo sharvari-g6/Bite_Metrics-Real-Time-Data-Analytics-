@@ -254,6 +254,11 @@ export HOME=/tmp
 
 ---
 
+## Dashboard
+<img width="1358" height="719" alt="image" src="https://github.com/user-attachments/assets/3c65c495-c8fa-4a15-ac7c-774f3aa91d4d" />
+
+---
+
 ## Key Concepts Demonstrated
 
 * Data Cleaning & EDA
